@@ -1,0 +1,8 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Source backup of the logo (the processed logo.png is what the site uses)
+# Comment the next line out if you want to version the original too.
+Logo.jpg

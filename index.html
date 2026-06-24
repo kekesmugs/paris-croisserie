@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paris Croisserie Bakery &amp; Cafe — French Pastries in Lubbock, TX</title>
+  <meta name="description" content="Paris Croisserie Bakery & Cafe brings a taste of Paris to Lubbock, Texas. Fresh-baked croissants, French pastries, tarts, cakes and espresso. 7610 Milwaukee Ave, Ste 300." />
+
+  <!-- ============================================================
+       SWAP-IN CHECKLIST (things to confirm / replace):
+       1. PHONE NUMBER  — search for  data-placeholder="phone"
+       2. HOURS BY DAY  — confirm the days in the "Visit" section
+       3. MENU PRICES   — search for  data-placeholder="price"
+       4. PHOTOS        — save the 5 real photos into  paris-croisserie/images/
+                          with these exact filenames:
+                            strawberry-cream-croissant.jpg   (hero + gallery)
+                            fresh-croissants-tray.jpg        (about + gallery)
+                            eggs-benedict-croissant.jpg      (about)
+                            signature-croissant-sandwich.jpg (gallery)
+                            chocolate-raspberry-cake.jpg     (gallery)
+       Everything else (address, map, Facebook, Uber Eats) is real.
+       ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant', 'Georgia', 'serif'],
+            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ivory:   '#FAF8F3',  /* warm cream — logo background */
+            cream:   '#EAEFF8',  /* soft blue-tinted panel */
+            sand:    '#CFD9EC',  /* light blue-grey borders */
+            cocoa:   '#1F3370',  /* royal Parisian blue (deepened) — primary */
+            espresso:'#1A2340',  /* deep navy — darkest text / footer */
+            caramel: '#8A6B17',  /* deep antique gold — text accents (AA on cream) */
+            gold:    '#C9A24B',  /* bright gold — decorative (stars, rules) */
+            mocha:   '#54648A',  /* muted blue-grey — captions */
+          },
+          letterSpacing: { widest2: '0.28em' },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #FAF8F3; }
+
+    /* Faint paper grain so the cream surfaces feel warm, not flat */
+    .grain::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .eyebrow { letter-spacing: 0.28em; }
+
+    /* Thin gold rule with a centered diamond — a quiet patisserie motif */
+    .rule { display:flex; align-items:center; justify-content:center; gap:.75rem; }
+    .rule::before, .rule::after { content:""; height:1px; width:3rem; background:linear-gradient(90deg,transparent,#C9A24B); }
+    .rule::after { background:linear-gradient(90deg,#C9A24B,transparent); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+    }
+
+    .link-underline { position: relative; }
+    .link-underline::after {
+      content:""; position:absolute; left:0; bottom:-3px; height:1px; width:100%;
+      background:#C9A24B; transform:scaleX(0); transform-origin:left; transition:transform .3s ease;
+    }
+    .link-underline:hover::after, .link-underline:focus-visible::after { transform:scaleX(1); }
+
+    :focus-visible { outline: 2px solid #8A6B17; outline-offset: 3px; border-radius: 2px; }
+  </style>
+</head>
+
+<body class="grain font-sans text-espresso antialiased selection:bg-gold/30">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-3 focus:left-3 focus:bg-cocoa focus:text-ivory focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+
+  <!-- ===== Announcement bar ===== -->
+  <div class="relative z-30 bg-cocoa text-ivory/90 text-[11px] sm:text-xs">
+    <div class="mx-auto max-w-6xl px-4 py-2 flex items-center justify-center gap-x-6 gap-y-1 text-center flex-wrap">
+      <span class="inline-flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Open Daily · 8:00 AM – 5:00 PM
+      </span>
+      <span class="hidden sm:inline-flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        7610 Milwaukee Ave · Lubbock, TX
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== Navbar ===== -->
+  <header id="nav" class="sticky top-0 z-30 transition-all duration-300 bg-ivory/85 backdrop-blur-md border-b border-sand/60">
+    <nav class="mx-auto max-w-6xl px-4 sm:px-6 h-20 flex items-center justify-between" aria-label="Primary">
+      <a href="#top" class="flex items-center shrink-0 ml-2 sm:ml-4" aria-label="Paris Croisserie — Bakery and Café, Lubbock. Back to top">
+        <img src="images/logo.png" alt="Paris Croisserie — Bakery and Café" width="248" height="103"
+             class="h-12 sm:h-14 w-auto" />
+      </a>
+
+      <div class="hidden md:flex items-center gap-9 text-sm tracking-wide text-espresso/80">
+        <a href="#about" class="link-underline hover:text-cocoa transition-colors">About</a>
+        <a href="#menu" class="link-underline hover:text-cocoa transition-colors">Menu</a>
+        <a href="#gallery" class="link-underline hover:text-cocoa transition-colors">Gallery</a>
+        <a href="#visit" class="link-underline hover:text-cocoa transition-colors">Visit</a>
+      </div>
+
+      <a href="#visit" class="hidden md:inline-flex items-center gap-2 bg-cocoa hover:bg-espresso text-ivory text-sm px-5 py-2.5 rounded-full transition-colors cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        Get Directions
+      </a>
+
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-cocoa cursor-pointer" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-sand/60 bg-ivory/95 backdrop-blur">
+      <div class="px-6 py-4 flex flex-col gap-1 text-espresso/85">
+        <a href="#about" class="py-3 border-b border-sand/40">About</a>
+        <a href="#menu" class="py-3 border-b border-sand/40">Menu</a>
+        <a href="#gallery" class="py-3 border-b border-sand/40">Gallery</a>
+        <a href="#visit" class="py-3 border-b border-sand/40">Visit</a>
+        <a href="#visit" class="mt-3 inline-flex items-center justify-center gap-2 bg-cocoa text-ivory px-5 py-3 rounded-full">Get Directions</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="relative z-10">
+
+    <!-- ===== Hero ===== -->
+    <section id="top" class="relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center pt-14 pb-16 sm:pt-20 sm:pb-24">
+        <div class="reveal">
+          <p class="eyebrow text-xs text-caramel uppercase mb-5">Un goût de Paris à Lubbock</p>
+          <h1 class="font-serif text-cocoa font-500 leading-[0.98] text-5xl sm:text-6xl lg:text-7xl">
+            A little taste of<br /><span class="italic text-caramel">Paris</span>, baked fresh<br />every morning.
+          </h1>
+          <p class="mt-6 max-w-md text-espresso/75 leading-relaxed">
+            Buttery croissants, delicate tarts, and proper espresso, all handcrafted in the
+            French tradition, right here in West Texas. Come in warm, leave a little happier.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a href="#visit" class="inline-flex items-center gap-2 bg-cocoa hover:bg-espresso text-ivory px-7 py-3.5 rounded-full transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2.5"/></svg>
+              Visit the Café
+            </a>
+            <a href="#menu" class="inline-flex items-center gap-2 text-cocoa px-2 py-2 link-underline cursor-pointer">
+              Explore the menu
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div class="mt-9 flex items-center gap-3 text-sm text-mocha">
+            <span class="flex text-gold" aria-hidden="true">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            </span>
+            Loved by Lubbock — 5.0 stars
+          </div>
+        </div>
+
+        <div class="reveal relative">
+          <div class="relative">
+            <img src="images/strawberry-cream-croissant.jpg"
+                 alt="Strawberry and cream croissants dusted with powdered sugar"
+                 loading="eager" width="1100" height="1300"
+                 class="w-full h-[420px] sm:h-[540px] object-cover rounded-[2rem] shadow-2xl shadow-cocoa/20" />
+            <div class="absolute -bottom-6 -left-4 sm:-left-8 bg-ivory rounded-2xl shadow-xl px-6 py-4 border border-sand/70 max-w-[230px]">
+              <p class="font-serif text-2xl text-cocoa leading-none">Baked daily</p>
+              <p class="text-xs text-mocha mt-1.5">Croissants, tarts &amp; pastries made from scratch each morning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="relative py-20 sm:py-28 bg-cream/60">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal order-2 lg:order-1 grid grid-cols-2 gap-4">
+          <img src="images/fresh-croissants-tray.jpg"
+               alt="Tray of freshly baked golden croissants" loading="lazy" width="700" height="900"
+               class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-lg mt-8" />
+          <img src="images/eggs-benedict-croissant.jpg"
+               alt="Croissant eggs Benedict topped with hollandaise, served with a croissant" loading="lazy" width="700" height="900"
+               class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-lg" />
+        </div>
+
+        <div class="reveal order-1 lg:order-2">
+          <p class="eyebrow text-xs text-caramel uppercase mb-4">Our Story</p>
+          <h2 class="font-serif text-4xl sm:text-5xl text-cocoa font-500 leading-tight">
+            French craft, West&nbsp;Texas warmth.
+          </h2>
+          <div class="rule my-6 !justify-start"></div>
+          <p class="text-espresso/75 leading-relaxed">
+            Paris Croisserie began with a simple idea: that the unhurried pleasure of a Parisian
+            café belongs everywhere — even on Milwaukee Avenue. Each day starts before dawn,
+            laminating dough by hand and pulling shots of espresso so that Lubbock can slow down,
+            even if only for one perfect croissant.
+          </p>
+          <dl class="mt-9 grid grid-cols-3 gap-4 max-w-md">
+            <div>
+              <dt class="sr-only">Baked from scratch</dt>
+              <dd class="font-serif text-3xl text-cocoa">100%</dd>
+              <p class="text-xs text-mocha mt-1">Made in-house</p>
+            </div>
+            <div>
+              <dt class="sr-only">Open daily</dt>
+              <dd class="font-serif text-3xl text-cocoa">7&nbsp;days</dd>
+              <p class="text-xs text-mocha mt-1">A week*</p>
+            </div>
+            <div>
+              <dt class="sr-only">Customer rating</dt>
+              <dd class="font-serif text-3xl text-cocoa">5.0★</dd>
+              <p class="text-xs text-mocha mt-1">Local reviews</p>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Menu ===== -->
+    <section id="menu" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal text-center max-w-2xl mx-auto">
+          <p class="eyebrow text-xs text-caramel uppercase mb-4">La Carte</p>
+          <h2 class="font-serif text-4xl sm:text-5xl text-cocoa font-500">From our ovens &amp; espresso bar</h2>
+          <div class="rule my-6"></div>
+          <p class="text-espresso/70">A glimpse of what's in the case — a few favorites from each corner of the
+            menu. Selection rotates daily, so there's always something new to discover.</p>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-2 gap-x-12 gap-y-12">
+
+          <!-- Croissants & Danish -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 14c2-5 16-5 18 0-2 2-16 2-18 0zM6 14l-1 4M18 14l1 4M9 13.5V10M15 13.5V10"/></svg>
+              <h3 class="font-serif text-2xl text-cocoa">Croissants &amp; Danish</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Dubai Chocolate Forest Croissant</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$10</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Coffee Velvet Croissant <span class="ml-1 align-middle text-[10px] uppercase tracking-wide text-caramel border border-caramel/40 rounded-full px-1.5 py-0.5">Popular</span></span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$9</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Cheese Lava Danish <span class="ml-1 align-middle text-[10px] uppercase tracking-wide text-caramel border border-caramel/40 rounded-full px-1.5 py-0.5">Popular</span></span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$7</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Raspberry Dream Croissant</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$8</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Desserts -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 13h16M5 13a7 7 0 0114 0M12 6V4M9 13v6M15 13v6M7 19h10"/></svg>
+              <h3 class="font-serif text-2xl text-cocoa">Desserts</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Mango Bloom</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$11</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Mango Gem <span class="ml-1 align-middle text-[10px] uppercase tracking-wide text-caramel border border-caramel/40 rounded-full px-1.5 py-0.5">Popular</span></span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$10</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Strawberry Gem</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$9</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Tiramisù</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$9</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Brunch Sandwiches -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8c0-1.7 4-3 9-3s9 1.3 9 3M3 8h18l-1.5 2.5H4.5L3 8zM4.5 10.5h15v2A2.5 2.5 0 0117 15H7a2.5 2.5 0 01-2.5-2.5v-2zM5 18h14"/></svg>
+              <h3 class="font-serif text-2xl text-cocoa">Brunch Sandwiches</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Beef Brisket Croissant <span class="ml-1 align-middle text-[10px] uppercase tracking-wide text-caramel border border-caramel/40 rounded-full px-1.5 py-0.5">Popular</span></span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$12</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Ham &amp; Cheese Croissant</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$10</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Grilled Chicken Croissant</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$10</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Smoked Salmon Croissant</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$11</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coffee -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h12v5a4 4 0 01-4 4H8a4 4 0 01-4-4V8zM16 9h2.5a2.5 2.5 0 010 5H16M6 4.5c0 .8-.8 1-.8 1.8M10 4.5c0 .8-.8 1-.8 1.8"/></svg>
+              <h3 class="font-serif text-2xl text-cocoa">Coffee</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Paris Tiramisu Latte</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$7</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Paris Caramel Cloud Mocha <span class="ml-1 align-middle text-[10px] uppercase tracking-wide text-caramel border border-caramel/40 rounded-full px-1.5 py-0.5">Popular</span></span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$7</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Paris Strawberry White Mocha</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$7</span>
+              </li>
+              <li class="flex items-baseline gap-3">
+                <span class="text-espresso">Matcha Latte</span>
+                <span class="flex-1 border-b border-dotted border-sand"></span>
+                <span class="text-mocha whitespace-nowrap">$5</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal mt-14 text-center">
+          <a href="https://www.ubereats.com/store/paris-croisserie-bakery-and-cafe/RyhpVTycXSK4AYzbwHba-Q" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 border border-cocoa/30 hover:border-cocoa hover:bg-cocoa hover:text-ivory text-cocoa font-semibold px-7 py-3.5 rounded-full transition-colors cursor-pointer">
+            Order delivery on Uber Eats
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M19 14v3a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Gallery ===== -->
+    <section id="gallery" class="py-20 sm:py-28 bg-cream/60">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal text-center max-w-2xl mx-auto mb-12">
+          <p class="eyebrow text-xs text-caramel uppercase mb-4">La Galerie</p>
+          <h2 class="font-serif text-4xl sm:text-5xl text-cocoa font-500">A feast for the eyes</h2>
+          <div class="rule my-6"></div>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <img src="images/signature-croissant-sandwich.jpg" alt="Paris Croisserie signature croissant sandwich with melted cheese" loading="lazy" class="w-full h-48 sm:h-64 object-cover rounded-xl reveal hover:brightness-105 transition" />
+          <img src="images/chocolate-raspberry-cake.jpg" alt="Chocolate cream cake bars topped with whipped cream and raspberries" loading="lazy" class="w-full h-48 sm:h-64 object-cover rounded-xl reveal hover:brightness-105 transition lg:mt-8" />
+          <img src="images/tiramisu-cruffin.jpg" alt="Tiramisù cruffin dusted with cocoa and topped with gold leaf" loading="lazy" class="w-full h-48 sm:h-64 object-cover rounded-xl reveal hover:brightness-105 transition" />
+          <img src="images/Coffeeee.jpg" alt="Latte with rosetta latte art served on a saucer" loading="lazy" class="w-full h-48 sm:h-64 object-cover rounded-xl reveal hover:brightness-105 transition lg:mt-8" />
+        </div>
+        <p class="reveal text-center mt-8 text-sm text-mocha">
+          See more on
+          <a href="https://www.facebook.com/p/Paris-Croisserie-Bakery-Cafe-61578745064109/" target="_blank" rel="noopener" class="text-cocoa link-underline">our Facebook page</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Visit ===== -->
+    <section id="visit" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+
+          <div class="reveal">
+            <p class="eyebrow text-xs text-caramel uppercase mb-4">Come See Us</p>
+            <h2 class="font-serif text-4xl sm:text-5xl text-cocoa font-500 leading-tight">Find your<br />new favorite café.</h2>
+            <div class="rule my-7 !justify-start"></div>
+
+            <ul class="space-y-7">
+              <li class="flex gap-4">
+                <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-caramel" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                </span>
+                <div>
+                  <h3 class="font-serif text-xl text-cocoa">Location</h3>
+                  <p class="text-espresso/75 mt-1">7610 Milwaukee Ave, Ste 300<br />Lubbock, TX 79424</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&destination=Paris+Croisserie+Bakery+%26+Cafe+7610+Milwaukee+Ave+Lubbock+TX+79424"
+                     target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-caramel link-underline text-sm cursor-pointer">
+                     Get directions
+                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-caramel" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
+                <div>
+                  <h3 class="font-serif text-xl text-cocoa">Hours</h3>
+                  <!-- CONFIRM HOURS: search said 8 AM–5 PM; days below are an assumption -->
+                  <dl class="mt-1 text-espresso/75 text-sm grid grid-cols-[auto_1fr] gap-x-6 gap-y-1">
+                    <dt>Monday – Friday</dt><dd>8:00 AM – 5:00 PM</dd>
+                    <dt>Saturday</dt><dd>8:00 AM – 5:00 PM</dd>
+                    <dt>Sunday</dt><dd>9:00 AM – 3:00 PM</dd>
+                  </dl>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-caramel" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.3a1 1 0 01.95.68l1 3a1 1 0 01-.27 1.05l-1.5 1.34a14 14 0 006.1 6.1l1.34-1.5a1 1 0 011.05-.27l3 1a1 1 0 01.68.95V19a2 2 0 01-2 2A16 16 0 013 5z"/></svg>
+                </span>
+                <div>
+                  <h3 class="font-serif text-xl text-cocoa">Contact</h3>
+                  <p class="text-espresso/75 mt-1">
+                    <a href="tel:+18067771229" class="link-underline">(806) 777-1229</a>
+                  </p>
+                  <a href="https://www.facebook.com/p/Paris-Croisserie-Bakery-Cafe-61578745064109/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-caramel link-underline text-sm cursor-pointer">
+                    Message us on Facebook
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal">
+            <div class="h-full min-h-[360px] rounded-[2rem] overflow-hidden shadow-xl border border-sand/70">
+              <iframe
+                title="Map to Paris Croisserie Bakery & Cafe, 7610 Milwaukee Ave, Lubbock, TX"
+                src="https://www.google.com/maps?q=7610+Milwaukee+Ave+Ste+300,+Lubbock,+TX+79424&output=embed"
+                width="100%" height="100%" style="border:0; min-height:360px;"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="relative z-10 bg-espresso text-ivory/80">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="lg:col-span-2">
+        <p class="font-serif text-3xl text-ivory">Paris Croisserie</p>
+        <p class="eyebrow text-[10px] text-gold uppercase mt-1">Bakery &amp; Café · Lubbock, TX</p>
+        <p class="mt-4 max-w-sm text-sm text-ivory/65 leading-relaxed">
+          A little taste of Paris, baked fresh every morning in West Texas.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-gold text-sm tracking-wide mb-4">Visit</h3>
+        <p class="text-sm text-ivory/70 leading-relaxed">
+          7610 Milwaukee Ave, Ste 300<br />Lubbock, TX 79424<br />
+          Open daily · 8 AM – 5 PM
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-gold text-sm tracking-wide mb-4">Find us online</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.facebook.com/p/Paris-Croisserie-Bakery-Cafe-61578745064109/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-ivory transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg>Facebook</a></li>
+          <li><a href="https://www.ubereats.com/store/paris-croisserie-bakery-and-cafe/RyhpVTycXSK4AYzbwHba-Q" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-ivory transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 5M7 13l-2 4h12"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>Order on Uber Eats</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-ivory/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ivory/50">
+        <p>© <span id="year"></span> Paris Croisserie Bakery &amp; Cafe. All rights reserved.</p>
+        <p>Made with care in Lubbock, Texas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.add('hidden'); btn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Navbar shadow on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('shadow-md', window.scrollY > 8);
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Scroll reveal (respects reduced motion)
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('in'));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
